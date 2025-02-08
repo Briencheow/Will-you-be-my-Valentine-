@@ -12,8 +12,8 @@ body {
 
 .background-images {
     display: grid; /* Use grid for layout */
-    grid-template-columns: repeat(6, 1fr); /* Adjust column count as needed */
-    grid-template-rows: repeat(6, 1fr); /* Adjust row count as needed */
+    grid-template-columns: repeat(4, 1fr); /* Adjust column count as needed */
+    grid-template-rows: repeat(4, 1fr); /* Adjust row count as needed */
     position: absolute;
     top: 0;
     left: 0;
