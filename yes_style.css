@@ -36,7 +36,7 @@ body {
     text-align: center;
     position: relative; /* Ensure container is positioned above background */
     z-index: 1; /* Bring container above background images */
-    margin-top: 20px; /* Ensure the container is below the GIF space */
+    margin-top: 350px; /* Ensure the container is below the GIF space */
 }
 
 .header_text {
