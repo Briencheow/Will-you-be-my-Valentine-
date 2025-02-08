@@ -5,6 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knew you would say yes patootie!</title>
     <link rel="stylesheet" href="./yes_style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the top */
+            height: 100vh;
+            margin: 0;
+            background-color: #f9e3e3;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+        }
+
+        .background-images {
+            display: flex; /* Use Flexbox */
+            flex-wrap: wrap; /* Allow wrapping */
+            justify-content: space-around; /* Space out images */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Set to full height */
+            z-index: -1; /* Send images behind other content */
+        }
+
+        .circle-image {
+            width: 150px; /* Fixed width */
+            height: 150px; /* Fixed height */
+            border-radius: 50%; /* Make images circular */
+            object-fit: cover; /* Ensure images cover their container */
+            opacity: 0.8; /* Slight transparency for overlay effect */
+            margin: 1%; /* Space between images */
+        }
+
+        .container {
+            text-align: center;
+            position: relative; /* Ensure container is positioned above background */
+            z-index: 1; /* Bring container above background images */
+            margin-top: 100px; /* Move the container downwards */
+        }
+
+        .header_text {
+            font-size: 3em;
+            color: #d32f2f;
+            margin-top: 20px; /* Add some space above the text */
+        }
+
+        .gif_container {
+            position: relative; /* Position relative for stacking */
+            z-index: 2; /* Ensure it's above the background images */
+            margin-bottom: 20px; /* Space below the GIF container */
+        }
+    </style>
 </head>
 <body>
     <div class="background-images">
@@ -24,12 +76,43 @@
     </div>
     
     <div class="container">
-
         <div class="gif_container">
             <img src="https://media.giphy.com/media/KDJyeD3ek5biJLIEpB/giphy.gif?cid=ecf05e4741ayip9f2nemr7accap6a4gs36f4rmy1upx08vxz&ep=v1_stickers_related&rid=giphy.gif&ct=s">
         </div>
         <h1 class="header_text">Knew you would say yes patootie!</h1>
-        
     </div>
+
+    <script>
+        function adjustImages() {
+            const images = document.querySelectorAll('.circle-image');
+            const screenWidth = window.innerWidth;
+
+            // Define the number of images to show based on screen width
+            let numImagesToShow;
+
+            if (screenWidth > 1200) {
+                numImagesToShow = images.length; // Show all images
+            } else if (screenWidth > 800) {
+                numImagesToShow = Math.ceil(images.length / 2); // Show half
+            } else {
+                numImagesToShow = Math.ceil(images.length / 3); // Show a third
+            }
+
+            // Loop through the images and set visibility
+            images.forEach((img, index) => {
+                if (index < numImagesToShow) {
+                    img.style.display = 'block'; // Show image
+                } else {
+                    img.style.display = 'none'; // Hide image
+                }
+            });
+        }
+
+        // Initial call to adjust images on page load
+        adjustImages();
+
+        // Adjust images on window resize
+        window.addEventListener('resize', adjustImages);
+    </script>
 </body>
 </html>
