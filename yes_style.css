@@ -11,51 +11,42 @@ body {
 }
 
 .background-images {
-    display: grid; /* Use grid for layout */
-    grid-template-columns: repeat(28, 1fr); /* Adjust column count as needed */
-    grid-template-rows: repeat(28, 1fr); /* Adjust row count as needed */
+    display: flex; /* Use Flexbox */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-around; /* Space out images */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 150px); /* Leave space for the GIF container */
     z-index: -1; /* Send images behind other content */
-    transform: rotate(45deg); /* Rotate grid for diamond pattern */
 }
 
 .circle-image {
-    position: absolute; /* Position images absolutely */
     width: 100px; /* Adjust size as needed */
     height: 100px; /* Adjust size as needed */
     border-radius: 50%; /* Make images circular */
     object-fit: cover; /* Ensure images cover their container */
     opacity: 0.8; /* Slight transparency for overlay effect */
+    margin: 1%; /* Space between images */
 }
-
-/* Example scattered positions */
-.background-images img:nth-child(1) { top: 5%; left: 5%; }
-.background-images img:nth-child(2) { top: 5%; left: calc(100% / 3); }
-.background-images img:nth-child(3) { top: 5%; left: calc(100% / 3 * 2); }
-.background-images img:nth-child(4) { top: calc(100% / 3); left: 5%; }
-.background-images img:nth-child(5) { top: calc(100% / 3); left: calc(100% / 3 * 2); }
-.background-images img:nth-child(6) { top: calc(100% / 3 * 2); left: 5%; }
-.background-images img:nth-child(7) { top: calc(100% / 3 * 2); left: calc(100% / 3); }
-.background-images img:nth-child(8) { top: calc(100% / 3 * 2); left: calc(100% / 3 * 2); }
-.background-images img:nth-child(9) { top: 20%; left: 80%; }
-.background-images img:nth-child(10) { top: 70%; left: 15%; }
-.background-images img:nth-child(11) { top: 40%; left: 60%; }
-.background-images img:nth-child(12) { top: 80%; left: 40%; }
-.background-images img:nth-child(13) { top: 60%; left: 20%; }
 
 .container {
     text-align: center;
     position: relative; /* Ensure container is positioned above background */
     z-index: 1; /* Bring container above background images */
+    margin-top: 150px; /* Ensure the container is below the GIF space */
 }
 
 .header_text {
     font-size: 3em;
     color: #d32f2f;
+}
+
+.gif_container {
+    position: relative; /* Position relative for stacking */
+    z-index: 2; /* Ensure it's above the background images */
+    margin-bottom: 20px; /* Space below the GIF container */
 }
 
 .gif_container img {
