@@ -32,6 +32,18 @@ body {
     margin: 1%;
 }
 
+@media (max-width: 800px) {
+    .circle-image {
+        flex-basis: calc(50% - 2%); /* 2 images per row on smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .circle-image {
+        flex-basis: 100%; /* 1 image per row on very small screens */
+    }
+}
+
 .container {
     text-align: center;
     position: relative; /* Ensure container is positioned above background */
