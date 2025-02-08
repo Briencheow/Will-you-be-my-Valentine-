@@ -24,21 +24,33 @@ body {
 }
 
 .circle-image {
+    position: absolute; /* Position images absolutely */
     width: 100px; /* Adjust size as needed */
     height: 100px; /* Adjust size as needed */
     border-radius: 50%; /* Make images circular */
-    margin: 0; /* Remove margins */
     object-fit: cover; /* Ensure images cover their container */
+    opacity: 0.8; /* Slight transparency for overlay effect */
 }
 
-/* Position images in the diamond pattern */
-.background-images img {
-    grid-column: span 2; /* Adjust how many columns each image spans */
-    grid-row: span 2; /* Adjust how many rows each image spans */
-}
+/* Example scattered positions */
+.background-images img:nth-child(1) { top: 10%; left: 15%; }
+.background-images img:nth-child(2) { top: 20%; left: 30%; }
+.background-images img:nth-child(3) { top: 30%; left: 50%; }
+.background-images img:nth-child(4) { top: 40%; left: 70%; }
+.background-images img:nth-child(5) { top: 50%; left: 10%; }
+.background-images img:nth-child(6) { top: 60%; left: 40%; }
+.background-images img:nth-child(7) { top: 70%; left: 80%; }
+.background-images img:nth-child(8) { top: 80%; left: 20%; }
+.background-images img:nth-child(9) { top: 90%; left: 60%; }
+.background-images img:nth-child(10) { top: 25%; left: 80%; }
+.background-images img:nth-child(11) { top: 75%; left: 30%; }
+.background-images img:nth-child(12) { top: 15%; left: 50%; }
+.background-images img:nth-child(13) { top: 55%; left: 35%; }
 
 .container {
     text-align: center;
+    position: relative; /* Ensure container is positioned above background */
+    z-index: 1; /* Bring container above background images */
 }
 
 .header_text {
