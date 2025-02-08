@@ -12,7 +12,6 @@ const messages = [
 ];
 
 let messageIndex = 0;
-let noClickCount = 0;
 
 const imagePaths = [
     "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif",
@@ -24,7 +23,9 @@ const imagePaths = [
 function handleNoClick() {
     const noButton = document.querySelector('.no-button');
     const yesButton = document.querySelector('.yes-button');
+    const imageDisplay = document.querySelector('.gif_container img');
     noButton.textContent = messages[messageIndex];
+    imageDisplay.src = imagePaths[currentIndex]; 
     messageIndex = (messageIndex + 1) % messages.length;
     const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
     yesButton.style.fontSize = `${currentSize * 1.5}px`;
@@ -33,8 +34,3 @@ function handleNoClick() {
 function handleYesClick() {
     window.location.href = "yes_page.html";
 }
-
-noButton.addEventListener
-
-    noClickCount++;
-    imageDisplay.src = imagePaths[noClickCount];
