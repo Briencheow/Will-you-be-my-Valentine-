@@ -7,7 +7,6 @@ body {
     background-color: #f9e3e3;
     font-family: 'Arial', sans-serif;
     position: relative;
-    overflow: hidden; /* Hide overflow */
 }
 
 .background-images {
@@ -18,24 +17,26 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 150px); /* Leave space for the GIF container */
+    height: calc(100% - 600px); /* Leave space for the GIF container */
     z-index: -1; /* Send images behind other content */
 }
 
 .circle-image {
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
-    border-radius: 50%; /* Make images circular */
-    object-fit: cover; /* Ensure images cover their container */
-    opacity: 0.8; /* Slight transparency for overlay effect */
-    margin: 1%; /* Space between images */
+    width: 10vw; /* 10% of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 150px; /* Maximum size */
+    max-height: 150px; /* Maximum size */
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0.8;
+    margin: 1%;
 }
 
 .container {
     text-align: center;
     position: relative; /* Ensure container is positioned above background */
     z-index: 1; /* Bring container above background images */
-    margin-top: 150px; /* Ensure the container is below the GIF space */
+    margin-top: 20px; /* Ensure the container is below the GIF space */
 }
 
 .header_text {
