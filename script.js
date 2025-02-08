@@ -23,7 +23,7 @@ const imagePaths = [
 function handleNoClick() {
     const noButton = document.querySelector('.no-button');
     const yesButton = document.querySelector('.yes-button');
-    const imageDisplay = documen.getElementById('dynamicImage');
+    const imageDisplay = document.getElementById('dynamicImage');
     noButton.textContent = messages[messageIndex];
     imageDisplay.src = imagePaths[messageIndex]; 
     messageIndex = (messageIndex + 1) % messages.length;
